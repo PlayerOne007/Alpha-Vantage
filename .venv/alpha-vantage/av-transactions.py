@@ -1,11 +1,15 @@
+from dotenv import load_dotenv
 import os
 
 from urllib.request import urlopen
 import json
 
-API_key = 'FEVLG3U70K6KSKVY'
+def configure():
+    load_dotenv()
 
-api_url =  url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey={API_key}'
+api_key = os.getenv('ALPHAVANTAGE_API_KEY')
+
+api_url =  url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey={'ALPHAVANTAGE_API_KEY'}'
 
 with urlopen(url) as response:
     body = response.read()

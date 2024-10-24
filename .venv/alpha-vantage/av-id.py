@@ -1,10 +1,14 @@
 from alpha_vantage.timeseries import TimeSeries
+from dotenv import load_dotenv
 import os
 import pandas as pd
 
-api_key = 'FEVLG3U70K6KSKVY'
+def configure():
+    load_dotenv()
 
-ts = TimeSeries(key=api_key)
+api_key = os.getenv('ALPHAVANTAGE_API_KEY')
+
+ts = TimeSeries(key='ALPHAVANTAGE_API_KEY')
 
 data, metadata = ts.get_intraday(symbol='IBM')
 print(metadata)

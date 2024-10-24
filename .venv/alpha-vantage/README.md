@@ -56,4 +56,10 @@ for index, row in enumerate(data_csv):
     if index > 5:
         break
 ```
-Note: To run the code, you can 
+Note: To run the code, you can run the following command:
+```
+python3 <filename.py>
+```
+or 
+
+Right click and run Python file on the Terminal
